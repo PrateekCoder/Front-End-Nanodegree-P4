@@ -1,5 +1,53 @@
-## Website Performance Optimization portfolio project
+# Website Performance Optimization Portfolio Project
 
+This Project Contains two parts.
+ 1. We are supposed to optimize a given portfolio page to achieve a score of 90 or above on google page insight.
+ 2. We are supposed to optimize the FPS on a page to run at silky smooth 60FPS.
+
+##Optimizing the Portfolio Page to achieve a page insight score of 90+.
+
+####The page insight Score of the Portfolio initially:
+The page provided to me had a very poor page insight score of 28 for mobile view and 30 for desktop view.
+
+![alt](http://s22.postimg.org/ick38se4x/Mobile_View_Before.png)
+
+![alt](http://s18.postimg.org/ylprqhwo9/Desktop_View_Before.png)
+
+####First Optimization (Image Optimization):
+The very first Optimization I did was the Image Optimization, Images takes up almost 95% of the data which are being downloaded by the clent, so images are the most critical things towards our Critical Path Optimization part. I customized 2 images namely the profilepic and the pizzeria.jpg. Reducing pizzeria.jpg 18% of its original size helped reducing the image from 2.25mb to a whooping 129kb. Further to achieve better optimization I converted the image format from jpg to webp, which further helped me reduce the image size from 129kn to 75.1kb helping me compress the image appox. by 97%-98%. I did all the image optimization using ImmageMagick cli. I also optimized the profilepic and converted into webp format.
+Here is the result from page insight after Image Optimization:
+
+![alt](http://s22.postimg.org/m4looxh1t/Mobile_View_Image_Optimization.png)
+
+![alt](http://s7.postimg.org/kx7udxuh7/Desktop_View_Image_Optimization.png)
+
+####Second Optimization (Google Font and perfmatter.js):
+The second optimization was the JavaScript optimization and the external link to google font optimization. Since the JS file was not a very big file, the best optiion was to just inline that in the script tag and make it async so that it doees not block the rendering process and I also made the Google analytics JS async so that it does not block the rendering process. Instead of creating a new link tag which took extra time while rendering for fetching the google font API I attached it with href in the same styles.css link tag to stop it from taking extra amount if time while rendering. 
+Here is the googl page insight result after Google font and JS optimization:
+
+![alt](http://s28.postimg.org/xbv1a0b4t/Mobile_View_After_Google_Font_Optimization.png)
+
+![alt](http://s10.postimg.org/8vzz595uh/Desktop_View_After_Google_Font_Optimization.png)
+
+####Final Optimization (CSS Optmization):
+There were three css files, which I optimized:
+ 1. print.css : This file needs to be only called when we want to print the page, so I optimized it using the media tag, in the link I used media and used print so that it is only going to be called when we want to print the page. Further since the print.css code were very less to further optimize I inlined the codes in the html file inside the style tag.
+ 2. portraitscreen.css : This code was written inside style.css but I made another file for this code, since it was supposed to be called only when the orientation of the device is potrait and the max-width is 480px. Since there were very few lines of codes I inlined this code again inside the style tag. and used the media, which stated it is only going to be used when the orientation is portrait and the max-wodth of the device is 480px.
+ 3. styles.css : This file was supposed to be used everytime so using any kind of media was not a goos idea, but the codes in this file were not very large and it was a good idea to just inline the codes. So I inlined the style.css file code to html inside the style tag.
+
+After all these optimization I was finally able to achieve a google page insight score of 90+. Here is the snap of the final insight score after all these optimization:
+
+![alt](http://s22.postimg.org/4y7xfi5ch/Final_Mobile_View_Page_Speed.png)
+
+![alt](http://s16.postimg.org/o5fhozd39/Final_Desktop_View_Page_Speed.png)
+
+###Optimizations which were out of the Scope:
+
+ 1. Leverage Browser Caching: Since I was working on github, and I had a github project page, intructing the browser for the max age for particular files was not possible since caching process and intructions to the web browser can be given by making changes to the .htaccess files but Github don't let the user use those files for security puposes, so this optimization was out of my scope.
+ 2. Reduce Server time: Even this thing was out of my scope because of the github project page. My server response time was 0.24 seconds.
+
+
+##Intructions By Udacity.
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
 
 To get started, check out the repository, inspect the code,
