@@ -6,6 +6,9 @@ This Project Contains two parts.
 
 ##Optimizing the Portfolio Page to achieve a page insight score of 90+.
 
+###Link to Optimized Page:
+http://prateekcoder.github.io/Front-End-Nanodegree-P4-Website-Optimization/
+
 ####The page insight Score of the Portfolio initially:
 The page provided to me had a very poor page insight score of 28 for mobile view and 30 for desktop view.
 
