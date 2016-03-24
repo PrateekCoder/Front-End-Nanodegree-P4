@@ -25,7 +25,7 @@ Here is the result from page insight after Image Optimization:
 ![alt](http://s7.postimg.org/kx7udxuh7/Desktop_View_Image_Optimization.png)
 
 ####Second Optimization (Google Font and perfmatter.js):
-The second optimization was the JavaScript optimization and the external link to google font optimization. Since the JS file was not a very big file, the best optiion was to just inline that in the script tag and make it async so that it does not block the rendering process and I also made the Google analytics JS async so that it does not block the rendering process. Instead of creating a new link tag which took extra time while rendering for fetching the google font API, I attached it with href in the same styles.css link tag to stop it from taking extra amount if time while rendering. 
+The second optimization was the JavaScript optimization and the external link to google font optimization. Since the JS file was not a very big file, the best optiion was to just inline that in the script tag and make it async so that it does not block the rendering process and I also made the Google analytics JS async so that it does not block the rendering process. Instead of creating a new link tag which took extra time while rendering for fetching the google font API, I attached it with href in the same styles.css link tag to stop it from taking extra amount if time while rendering.
 Here is the google page insight result after Google font and JS optimization:
 
 ![alt](http://s28.postimg.org/xbv1a0b4t/Mobile_View_After_Google_Font_Optimization.png)
@@ -83,7 +83,7 @@ Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
 ####Part 2: Optimize Frames per Second in pizza.html
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
+To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js.
 
 You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
 
@@ -122,3 +122,4 @@ Feeling uninspired by the portfolio? Here's a list of cool portfolios I found af
 * <a href="http://nicoledominguez.com/portfolio/">http://nicoledominguez.com/portfolio/</a>
 * <a href="http://www.roxannecook.com/">http://www.roxannecook.com/</a>
 * <a href="http://www.84colors.com/portfolio.html">http://www.84colors.com/portfolio.html</a>
+Hi.
