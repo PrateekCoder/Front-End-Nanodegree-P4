@@ -49,6 +49,32 @@ After all these optimization I was finally able to achieve a google page insight
  1. Leverage Browser Caching: Since I was working on github, and I had a github project page, instructing the browser for the max age for particular files was not possible since caching process and intructions to the web browser can be given by making changes to the .htaccess files but Github don't let the user access those files due to security puposes, so this optimization was out of my scope.
  2. Reduce Server time: Even this thing was out of my scope because of the github project page. My server response time was 0.24 seconds.
 
+##Optimizing Pizza.html to achieve a frame per second rate of 60 or higher:
+
+##FPS rate of pizza.html initially:
+![alt](https://s10.postimg.org/w1l8e7t49/Before.png)
+
+Using Chrome Developement Tools and loading the original pizza.html in an icognito mode shows the following loading times and number of frames in the console:
+
+Average time to generate last 10 frames: 36.56720000290079ms FPS: Way over 60 FPS
+
+##Optimizations done in JavaScript:
+ * Replaced "querySelector" with "getElementById", since the selectors are not too complex I chose getElementbyId since it is less expensive.
+ * Replaced "querySelectorAll" with "getElementsByClassName", since querySelector is also way too expensive for its desired purpose on pizza.html.
+ * Created a new variable allPizzaContainers for all pizza containers to apply dx and newwidth to all pizza containers; placed all variables out of the for loop.
+ * Placed the variable pizzasDiv in the for loop outside the for loop.
+ * Added createDocumentFragment to create a imaginary node to append its values to the pizza.html, reduced the number of Pizzas to the media size and the max of pizzas to 100.
+ * Added caching to actually cash items and if cashed to return the cached items.
+
+##Optimizations done in CSS:
+ * Added width and style of Pizzas to style.css, in CSS also manipulated backface-visibility since it is a visual property, that will cause painting to occur. Painting is obviously a super expensive operation in this project.
+ * In CSS I also added transform to force hardware acceleration.
+
+##Final Result After Optimizations:
+![alt](https://s18.postimg.org/5q5rrpwd5/After.png)
+
+Yes that's 60fps. Now the webpage is rendering at a silky smooth 60fps or higher.
+
 
 ##Intructions By Udacity.
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
