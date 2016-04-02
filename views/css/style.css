@@ -32,7 +32,13 @@ form {
 .mover {
   position: fixed;
   width: 256px;
+  height: 100px;
+  width: 73.333px;
   z-index: -1;
+  transform: translateZ(0); 
+  transform translate3d(0,0,0); /* to force hardware acceleration */
+  will-change: transform; 
+  backface-visibility: hidden; /* before inserting this I also checked csstrigges.com/#back */
 }
 
 .randomPizzaContainer {
@@ -46,6 +52,6 @@ form {
   clear:both;
 }
 
- .container {
+.container {
   background-color: rgba(240, 60, 60, 0.8);
 }
